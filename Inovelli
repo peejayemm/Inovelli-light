@@ -1,0 +1,51 @@
+alias: Front porch light on early
+description: ''
+mode: single
+trigger:
+  - platform: time
+    at: '05:05:05'
+condition: []
+action:
+  - type: turn_on
+    device_id: adb4aee983ffa626666a232c5ee773ae
+    entity_id: light.black_series_dimmer
+    domain: light
+    brightness_pct: 99
+alias: Front Porch light off at sunrise
+description: ''
+mode: single
+trigger:
+  - platform: sun
+    event: sunrise
+condition: []
+action:
+  - type: turn_off
+    device_id: adb4aee983ffa626666a232c5ee773ae
+    entity_id: light.black_series_dimmer
+    domain: light
+alias: Front Porch light on at sunset
+description: ''
+mode: single
+trigger:
+  - platform: sun
+    event: sunset
+condition: []
+action:
+  - type: turn_on
+    device_id: adb4aee983ffa626666a232c5ee773ae
+    entity_id: light.black_series_dimmer
+    domain: light
+    brightness_pct: 99
+alias: Front porch light off late
+description: ''
+mode: single
+trigger:
+  - platform: time
+    at: '22:00:00'
+condition: []
+action:
+  - type: turn_off
+    device_id: adb4aee983ffa626666a232c5ee773ae
+    entity_id: light.black_series_dimmer
+    domain: light
+   
